@@ -14,3 +14,10 @@ Scenario: Cadastramento mal sucedido de uma empresa
 	Given Eu Estou na página de “Cadastro”
 	When Eu preencho os campos solicitados “Nome da Empresa” com “Social Lab” , “CPF/MEI” com “000.000.000-00” e “Endereço” com “”
 	Then Eu vejo uma mensagem de erro sobre endereço não informado
+
+Scenario: Excluir Cadastro de uma empresa  no sistema
+
+		Given Eu estou na página de “Excluir”
+		And Eu estou logado como “Empresa” com o login “SocialLab1” e a senha “@123.4” 
+		When Eu seleciono excluir “conta” da plataforma
+		Then Eu vejo a mensagem de confirmação
